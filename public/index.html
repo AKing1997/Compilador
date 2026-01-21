@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Compiladores UOC</title>
+    <title>Plataforma Compiladores UOC</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -12,15 +12,31 @@
 
 <body>
 
-    <div id="setup-screen" class="setup-overlay" style="display:none;">
+    <div id="login-modal" class="setup-overlay" style="display:flex; z-index: 3000;">
+        <div class="upload-card" style="max-width:400px; padding: 40px;">
+            <div class="icon-box" style="background:#e0e7ff; color:#3730a3;"><i class="ri-user-secure-line"></i></div>
+            <h2 style="margin-bottom:20px;">Acceso Estudiantes</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuario (ej. ankit, naiel)" class="login-input" required>
+                <input type="password" id="password" placeholder="Contraseña" class="login-input" required>
+                <button type="submit" class="nav-btn primary"
+                    style="width:100%; justify-content:center; margin-top:20px;">
+                    Iniciar Sesión
+                </button>
+                <p id="login-error" style="color:var(--error); margin-top:15px; font-weight:600;"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="setup-screen" class="setup-overlay" style="display:none; z-index: 2000;">
         <div class="upload-card">
             <div class="icon-box"><i class="ri-database-2-line"></i></div>
             <h1>Base de Datos Vacía</h1>
-            <p>Sube el archivo <code>questions.json</code> para inicializar la base de datos.</p>
-            <label for="fileInput" class="custom-file-upload">
-                <i class="ri-upload-cloud-line"></i> Importar JSON
+            <p>Sube el primer archivo JSON para inicializar el sistema.</p>
+            <label for="fileInputInit" class="custom-file-upload">
+                <i class="ri-upload-cloud-line"></i> Inicializar BD
             </label>
-            <input type="file" id="fileInput" accept=".json">
+            <input type="file" id="fileInputInit" accept=".json">
         </div>
     </div>
 
@@ -28,37 +44,40 @@
 
         <aside class="sidebar" id="sidebar">
             <div class="brand">
-                <i class="ri-code-box-line"></i> <span>Compiladores</span>
+                <i class="ri-code-box-line"></i> <span>Compiladores Pro</span>
+            </div>
+            <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-sec);">
+                Hola, <strong id="user-display" style="color:var(--primary);">Estudiante</strong>
+                <a href="#" onclick="logout()"
+                    style="color:var(--error); font-size:0.8rem; margin-left:10px;">(Salir)</a>
             </div>
 
-            <button class="btn-ghost" onclick="openAddModal()"
-                style="margin-top:10px; border-color:var(--primary); color:var(--primary); width:100%;">
-                <i class="ri-add-circle-line"></i> Crear Pregunta
-            </button>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button class="btn-ghost create-btn" onclick="openAddModal()">
+                    <i class="ri-add-circle-line"></i> Crear Pregunta
+                </button>
+                <label for="fileInputMerge" class="btn-ghost merge-btn">
+                    <i class="ri-file-add-line"></i> Añadir más preguntas (JSON)
+                </label>
+                <input type="file" id="fileInputMerge" accept=".json" style="display:none;">
+            </div>
 
-            <div class="stats-panel" style="margin-top: 20px;">
-                <div class="stat-item success">
-                    <span class="stat-num" id="stat-correct">0</span>
-                    <span class="stat-label">Aciertos</span>
-                </div>
-                <div class="stat-item error">
-                    <span class="stat-num" id="stat-wrong">0</span>
-                    <span class="stat-label">Fallos</span>
-                </div>
-                <div class="stat-item pending">
-                    <span class="stat-num" id="stat-pending">0</span>
-                    <span class="stat-label">Pendientes</span>
-                </div>
+            <div class="stats-panel" style="margin-top: 30px;">
+                <div class="stat-item success"><span class="stat-num" id="stat-correct">0</span><span
+                        class="stat-label">Aciertos</span></div>
+                <div class="stat-item error"><span class="stat-num" id="stat-wrong">0</span><span
+                        class="stat-label">Fallos</span></div>
+                <div class="stat-item pending"><span class="stat-num" id="stat-pending">0</span><span
+                        class="stat-label">Pendientes</span></div>
             </div>
 
             <div class="map-container">
-                <small>MAPA DE PREGUNTAS</small>
-                <div class="question-grid" id="questionGrid">
-                </div>
+                <small>MAPA DE PROGRESO</small>
+                <div class="question-grid" id="questionGrid"></div>
             </div>
 
             <div class="sidebar-footer">
-                <button class="btn-ghost" onclick="resetExam()"><i class="ri-refresh-line"></i> Reiniciar
+                <button class="btn-ghost" onclick="resetExam()"><i class="ri-refresh-line"></i> Reiniciar Mi
                     Progreso</button>
                 <button class="btn-warning" id="retryBtn" onclick="startRetryMode()" style="display:none;">
                     <i class="ri-error-warning-line"></i> Repetir Fallos
@@ -71,7 +90,7 @@
                 <button class="menu-toggle" onclick="toggleSidebar()"><i class="ri-menu-line"></i></button>
                 <div class="progress-wrapper">
                     <div class="progress-info">
-                        <span id="current-q-display">Pregunta 1</span>
+                        <span id="current-q-display">Cargando...</span>
                         <span id="mode-badge" class="badge">Modo Examen</span>
                     </div>
                     <div class="progress-bg">
@@ -82,9 +101,8 @@
 
             <div class="question-wrapper">
                 <div class="question-card" id="questionCard">
-                    <h2 class="q-text" id="questionText">Cargando...</h2>
-                    <div class="options-list" id="optionsContainer">
-                    </div>
+                    <h2 class="q-text" id="questionText">...</h2>
+                    <div class="options-list" id="optionsContainer"></div>
                     <div class="feedback-msg" id="feedbackMsg"></div>
                 </div>
             </div>
@@ -98,41 +116,26 @@
         </main>
     </div>
 
-    <div id="add-modal" class="setup-overlay" style="display:none; z-index: 2000;">
+    <div id="add-modal" class="setup-overlay" style="display:none; z-index: 2500;">
         <div class="upload-card" style="text-align:left; max-width:600px; padding: 30px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
                 <h2 style="margin:0;">Nueva Pregunta</h2>
                 <button onclick="closeAddModal()"
                     style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
             </div>
-
-            <label style="font-weight:bold; display:block; margin-bottom:5px;">Enunciado</label>
-            <textarea id="new-q-text"
-                style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;"
-                rows="3"></textarea>
-
-            <label style="font-weight:bold; display:block; margin-bottom:5px;">Opciones</label>
-            <input type="text" class="opt-input" placeholder="Opción A"
-                style="width:100%; padding:10px; margin-bottom:8px; border:1px solid #ccc; border-radius:6px;">
-            <input type="text" class="opt-input" placeholder="Opción B"
-                style="width:100%; padding:10px; margin-bottom:8px; border:1px solid #ccc; border-radius:6px;">
-            <input type="text" class="opt-input" placeholder="Opción C"
-                style="width:100%; padding:10px; margin-bottom:8px; border:1px solid #ccc; border-radius:6px;">
-            <input type="text" class="opt-input" placeholder="Opción D"
-                style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
-
-            <label style="font-weight:bold; display:block; margin-bottom:5px;">Respuesta Correcta</label>
-            <select id="new-q-correct"
-                style="width:100%; padding:10px; margin-bottom:25px; border:1px solid #ccc; border-radius:8px;">
-                <option value="0">Opción A</option>
-                <option value="1">Opción B</option>
-                <option value="2">Opción C</option>
-                <option value="3">Opción D</option>
+            <textarea id="new-q-text" class="login-input" rows="3" placeholder="Enunciado"></textarea>
+            <label style="font-weight:bold; display:block; margin: 10px 0 5px;">Opciones</label>
+            <input type="text" class="opt-input login-input" placeholder="Opción A" style="margin-bottom:8px;">
+            <input type="text" class="opt-input login-input" placeholder="Opción B" style="margin-bottom:8px;">
+            <input type="text" class="opt-input login-input" placeholder="Opción C" style="margin-bottom:8px;">
+            <select id="new-q-correct" class="login-input" style="margin: 15px 0;">
+                <option value="0">Correcta: Opción A</option>
+                <option value="1">Correcta: Opción B</option>
+                <option value="2">Correcta: Opción C</option>
             </select>
-
             <div style="display:flex; gap:10px; justify-content:flex-end;">
                 <button class="nav-btn" onclick="closeAddModal()">Cancelar</button>
-                <button class="nav-btn primary" onclick="submitNewQuestion()">Guardar en BD</button>
+                <button class="nav-btn primary" onclick="submitNewQuestion()">Guardar</button>
             </div>
         </div>
     </div>

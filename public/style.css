@@ -443,3 +443,43 @@ input[type="file"] {
         font-size: 1.15rem;
     }
 }
+
+/* Estilos adicionales para Login y nuevos botones */
+.login-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9fafb;
+}
+
+.login-input:focus {
+    outline: 2px solid var(--primary);
+    border-color: transparent;
+}
+
+.create-btn {
+    color: var(--primary);
+    border-color: var(--primary);
+    width: 100%;
+}
+
+.merge-btn {
+    color: var(--text-main);
+    border-color: var(--border);
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid var(--border);
+}
+
+.merge-btn:hover {
+    background: #f3f4f6;
+}
