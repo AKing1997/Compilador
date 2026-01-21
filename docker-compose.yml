@@ -5,11 +5,13 @@ services:
   web:
     build: .
     ports:
-      - "3000:3000"
+      # CAMBIO CLAVE: Usamos el 8085 porque el 80 lo usa tu Nginx
+      - "8085:3000"
     environment:
       - MONGO_URI=mongodb://mongo:27017/examendb
     depends_on:
       - mongo
+    restart: always
 
   # Base de Datos MongoDB
   mongo:
@@ -18,6 +20,7 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db # Persistencia de datos
+    restart: always
 
 volumes:
   mongo-data:
