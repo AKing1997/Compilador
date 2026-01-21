@@ -1,0 +1,1982 @@
+[
+    {
+        "question": "¿Cuál es la función principal de un diagrama de Tombstone (o diagrama en T)?",
+        "options": [
+            "Representar la estructura de la memoria en tiempo de ejecución.",
+            "Describir el proceso de generación de código intermedio.",
+            "Representar visualmente la relación entre tres lenguajes en un procesador de lenguaje.",
+            "Optimizar el análisis sintáctico descendente."
+        ],
+        "correct": 2
+    },
+    {
+        "question": "En el contexto de los diagramas de Tombstone, ¿qué representan las tres partes de la T?",
+        "options": [
+            "Entrada, Proceso, Salida.",
+            "Lenguaje fuente, Lenguaje objeto, Lenguaje de implementación.",
+            "Análisis léxico, Análisis sintáctico, Análisis semántico.",
+            "Código fuente, Código máquina, Intérprete."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué técnica permite compilar un compilador escrito en su propio lenguaje fuente?",
+        "options": [
+            "Cross-compiling (compilación cruzada).",
+            "Bootstrapping (arranque).",
+            "Backtracking (vuelta atrás).",
+            "Peephole optimization (optimización de mirilla)."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "Diferencia fundamental entre compilador e intérprete:",
+        "options": [
+            "El compilador ejecuta el programa línea a línea; el intérprete genera un ejecutable.",
+            "El compilador traduce todo el programa a código máquina antes de ejecutar; el intérprete traduce y ejecuta instrucción a instrucción.",
+            "El intérprete es siempre más rápido que el compilador.",
+            "El compilador no necesita análisis sintáctico."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un compilador cruzado (cross-compiler)?",
+        "options": [
+            "Un compilador que corre en una máquina A y genera código para una máquina B.",
+            "Un compilador que mezcla código C y Pascal.",
+            "Un compilador que genera código intermedio pero no código máquina.",
+            "Un compilador que realiza dos pasadas sobre el código fuente."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En la fase de Análisis Léxico, ¿qué es un 'token'?",
+        "options": [
+            "La secuencia de caracteres en el código fuente que coincide con un patrón.",
+            "Un par formado por el nombre del token y un valor de atributo opcional.",
+            "Una regla gramatical en BNF.",
+            "Un error sintáctico detectado."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En Análisis Léxico, ¿qué es un 'lexema'?",
+        "options": [
+            "El tipo abstracto del símbolo (ej. ID, NUM).",
+            "La secuencia concreta de caracteres en el código fuente que concuerda con un patrón (ej. 'contador', '123').",
+            "La expresión regular que define el patrón.",
+            "El valor numérico de una constante."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué estructura de datos es fundamental para gestionar identificadores y sus atributos durante todas las fases?",
+        "options": [
+            "El árbol de análisis sintáctico.",
+            "El buffer de entrada.",
+            "La tabla de símbolos.",
+            "La pila de llamadas."
+        ],
+        "correct": 2
+    },
+    {
+        "question": "En el sistema de entrada del analizador léxico, ¿para qué se utiliza la técnica de 'pareja de buffers'?",
+        "options": [
+            "Para almacenar los tokens generados.",
+            "Para reducir la sobrecarga de llamadas al sistema y gestionar lexemas que cruzan límites de bloque.",
+            "Para realizar el análisis semántico simultáneamente.",
+            "Para evitar el uso de punteros."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'centinela' en el contexto de la gestión de buffers léxicos?",
+        "options": [
+            "Un carácter especial (ej. EOF) colocado al final del buffer para simplificar la comprobación de límites.",
+            "Un proceso que vigila el desbordamiento de pila.",
+            "El primer token de cada sentencia.",
+            "Un tipo de error léxico."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué herramienta de UNIX genera analizadores léxicos a partir de expresiones regulares?",
+        "options": [
+            "Yacc",
+            "Bison",
+            "Lex / Flex",
+            "Gcc"
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Cuál es la salida principal del Análisis Sintáctico?",
+        "options": [
+            "Una lista de tokens.",
+            "Un árbol de análisis sintáctico (Parse Tree) o árbol de sintaxis abstracta (AST).",
+            "Código máquina ejecutable.",
+            "Una tabla de símbolos vacía."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué define la 'sintaxis' de un lenguaje?",
+        "options": [
+            "El significado de las sentencias.",
+            "La estructura y forma correcta de las sentencias.",
+            "La asignación de registros.",
+            "La velocidad de ejecución."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué problema causa la 'recursividad por la izquierda' en un analizador sintáctico descendente (Top-Down)?",
+        "options": [
+            "Aumenta el tamaño del código generado.",
+            "Produce un bucle infinito.",
+            "Impide la detección de errores léxicos.",
+            "Genera un árbol sintáctico invertido."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "Una gramática es ambigua si...",
+        "options": [
+            "Tiene reglas recursivas.",
+            "Una cadena puede tener más de un árbol de análisis sintáctico distinto.",
+            "Utiliza más de 10 no terminales.",
+            "No puede generar la cadena vacía."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'factorización por la izquierda'?",
+        "options": [
+            "Una técnica para eliminar la ambigüedad en expresiones aritméticas.",
+            "Una transformación gramatical para permitir que un analizador predictivo elija la producción correcta.",
+            "Una optimización de código intermedio.",
+            "Un método para reducir el tamaño de la tabla de símbolos."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué caracteriza a un análisis sintáctico LL(1)?",
+        "options": [
+            "Lee de Izquierda a derecha, derivación por la Izquierda, 1 símbolo de anticipación.",
+            "Lee de Izquierda a derecha, derivación por la Derecha (Left-Right).",
+            "Lee de derecha a izquierda (Last-Last).",
+            "Es un análisis ascendente."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué tipo de analizador es YACC/Bison por defecto?",
+        "options": [
+            "LL(1) - Descendente.",
+            "LALR(1) - Ascendente.",
+            "LR(0).",
+            "Recursivo descendente."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En un análisis ascendente (Shift-Reduce), ¿qué es una operación de 'Shift' (desplazamiento)?",
+        "options": [
+            "Aplicar una regla gramatical para reducir el stack.",
+            "Mover el siguiente token de la entrada a la pila.",
+            "Finalizar el análisis con éxito.",
+            "Eliminar un token de la entrada."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En un análisis ascendente, ¿qué es un 'handle' (pivote)?",
+        "options": [
+            "El token actual de preanálisis.",
+            "La subcadena en el tope de la pila que coincide con el lado derecho de una producción y se debe reducir.",
+            "El símbolo inicial de la gramática.",
+            "El error encontrado."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué fase del compilador comprueba la compatibilidad de tipos (Type Checking)?",
+        "options": [
+            "Análisis Léxico.",
+            "Análisis Sintáctico.",
+            "Análisis Semántico.",
+            "Generación de Código."
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué son las Gramáticas Atribuidas?",
+        "options": [
+            "Gramáticas que no permiten recursividad.",
+            "Gramáticas enriquecidas con atributos y reglas semánticas asociadas a las producciones.",
+            "Gramáticas utilizadas solo para la optimización.",
+            "Gramáticas que definen los tokens."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "Un atributo 'sintetizado' en una gramática atribuida obtiene su valor de...",
+        "options": [
+            "Sus padres o hermanos en el árbol.",
+            "Sus hijos en el árbol de análisis.",
+            "La tabla de símbolos global únicamente.",
+            "El buffer de entrada."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "Un atributo 'heredado' obtiene su valor de...",
+        "options": [
+            "Sus hijos.",
+            "Su padre y/o hermanos.",
+            "Únicamente de sí mismo.",
+            "Del código máquina."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es el grafo de dependencias en el análisis semántico?",
+        "options": [
+            "Un diagrama de flujo del programa.",
+            "Una estructura que determina el orden de evaluación de los atributos.",
+            "La representación gráfica de la tabla de símbolos.",
+            "Un árbol sintáctico comprimido."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cuál de las siguientes NO es una forma de representación de código intermedio?",
+        "options": [
+            "Árboles sintácticos abstractos (AST).",
+            "Código de tres direcciones.",
+            "Notación polaca inversa (Postfix).",
+            "Diagrama de Gantt."
+        ],
+        "correct": 3
+    },
+    {
+        "question": "En el código de tres direcciones, una instrucción suele tener la forma:",
+        "options": [
+            "x = y op z",
+            "PUSH x",
+            "MOV AX, BX",
+            "IF x GOTO y"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué estructura de datos representa un 'cuádruplo' en código intermedio?",
+        "options": [
+            "(op, arg1, arg2, resultado)",
+            "(op, arg1, resultado)",
+            "(op, arg1, arg2)",
+            "(etiqueta, op, arg1, arg2)"
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En la implementación con 'triples', ¿cómo se referencia el resultado de una operación temporal?",
+        "options": [
+            "Mediante una variable temporal explícita (t1, t2).",
+            "Mediante la posición (índice) de la instrucción que lo calcula.",
+            "Usando el registro AX.",
+            "No se puede referenciar."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué ventaja tienen los 'triples indirectos' sobre los 'triples' simples?",
+        "options": [
+            "Usan menos memoria.",
+            "Permiten reordenar instrucciones (optimización) más fácilmente moviendo punteros en lugar de registros grandes.",
+            "Eliminan la necesidad de la tabla de símbolos.",
+            "Son más fáciles de leer para humanos."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un Bloque Básico en la optimización de código?",
+        "options": [
+            "Una función completa.",
+            "Una secuencia de instrucciones con un único punto de entrada y uno de salida, sin saltos internos.",
+            "Un bloque `if-else` completo.",
+            "Una variable global."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué optimización se puede realizar localmente dentro de un bloque básico?",
+        "options": [
+            "Eliminación de código inalcanzable global.",
+            "Eliminación de subexpresiones comunes locales.",
+            "Movemento de código fuera de bucles.",
+            "Inlining de funciones."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la optimización de mirilla (peephole optimization)?",
+        "options": [
+            "Una optimización global sobre todo el programa.",
+            "Una técnica que examina una ventana deslizante de pocas instrucciones para realizar mejoras locales.",
+            "Una técnica para optimizar la asignación de registros en todo el procedimiento.",
+            "La eliminación de recursividad."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un DAG (Grafo Acíclico Dirigido) en el contexto de bloques básicos?",
+        "options": [
+            "Una forma de detectar bucles infinitos.",
+            "Una representación para identificar subexpresiones comunes dentro del bloque.",
+            "Un error de compilación.",
+            "Un tipo de autómata finito."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la gestión de memoria en tiempo de ejecución, ¿qué es el 'Registro de Activación' (Activation Record)?",
+        "options": [
+            "El registro de la CPU que indica si está activa.",
+            "Un bloque de memoria en la pila que contiene la información de una llamada a procedimiento (parámetros, variables locales, etc.).",
+            "Una lista de variables globales.",
+            "El código de la función."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es el 'enlace dinámico' (dynamic link) en un registro de activación?",
+        "options": [
+            "Un puntero al registro de activación del llamador (control flow).",
+            "Un puntero al ámbito léxico estático.",
+            "Un enlace a una librería dinámica.",
+            "El valor de retorno de la función."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'enlace estático' (static link) o 'access link'?",
+        "options": [
+            "Un puntero al registro de activación donde se definió el procedimiento (permite acceso a variables no locales en lenguajes anidados).",
+            "Un puntero fijo a la base de la pila.",
+            "Un enlace que no cambia durante la ejecución.",
+            "La dirección de retorno."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "La asignación estática de memoria...",
+        "options": [
+            "Permite recursividad y estructuras dinámicas.",
+            "Determina el tamaño y dirección de los objetos en tiempo de compilación; no permite recursividad.",
+            "Usa el heap.",
+            "Es más lenta que la dinámica."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En una Máquina de Pila Abstracta, ¿qué contiene el registro PC (Program Counter)?",
+        "options": [
+            "El tope de la pila.",
+            "La dirección de la próxima instrucción a ejecutar.",
+            "El resultado de la última operación.",
+            "La base de las variables globales."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En una máquina de pila, ¿dónde toman sus operandos la mayoría de las instrucciones aritméticas (ADD, SUB)?",
+        "options": [
+            "De registros generales (R1, R2).",
+            "De la cima de la pila, y depositan el resultado allí.",
+            "Directamente de la memoria RAM.",
+            "Del código de instrucción."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es el P-Code?",
+        "options": [
+            "Código fuente en Pascal.",
+            "Código portátil para una máquina hipotética (máquina virtual), como en Pascal-P o Java Bytecode.",
+            "Código de preprocesador.",
+            "Código paralelo."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cuál es la principal ventaja de utilizar una máquina virtual / código intermedio interpretado?",
+        "options": [
+            "Máxima velocidad de ejecución posible.",
+            "Portabilidad: escribir el intérprete (VM) en una nueva máquina permite correr todos los programas.",
+            "Menor uso de memoria.",
+            "Eliminación de la fase de análisis léxico."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la arquitectura de la máquina de pila descrita, ¿qué es el registro SP?",
+        "options": [
+            "Stack Pointer: apunta a la cima de la pila de evaluación.",
+            "Static Pointer: apunta a las variables estáticas.",
+            "Source Pointer: apunta al código fuente.",
+            "Segment Pointer."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué instrucción de una máquina de pila típica realiza un salto incondicional?",
+        "options": [
+            "ADD",
+            "UJP (Unconditional Jump) / GOTO.",
+            "LOD",
+            "STO"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué significa que un lenguaje sea 'interpretado'?",
+        "options": [
+            "Que no tiene sintaxis.",
+            "Que su implementación estándar ejecuta el código fuente o intermedio directamente sin generar código máquina nativo persistente.",
+            "Que solo sirve para scripts sencillos.",
+            "Que no permite recursividad."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la técnica de 'JIT' (Just-In-Time Compilation)?",
+        "options": [
+            "Compilar todo el programa antes de empezar.",
+            "Interpretar siempre sin guardar código.",
+            "Compilar a código nativo fragmentos de código (ej. bytecode) en tiempo de ejecución justo antes de ejecutarlos.",
+            "Depurar el código tiempo real."
+        ],
+        "correct": 2
+    },
+    {
+        "question": "En un analizador léxico, si un lexema coincide con varios patrones, ¿cuál es la regla estándar de desempate?",
+        "options": [
+            "Elegir el primero definido en el archivo.",
+            "Elegir la coincidencia más larga (Longest Match).",
+            "Elegir la más corta.",
+            "Lanzar un error."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué tipo de error NO detecta un analizador léxico?",
+        "options": [
+            "Caracteres ilegales.",
+            "Identificadores mal formados.",
+            "Uso de una variable no declarada.",
+            "Cadenas no cerradas."
+        ],
+        "correct": 2
+    },
+    {
+        "question": "En BNF, ¿qué significan los símbolos terminales?",
+        "options": [
+            "Variables sintácticas que se pueden derivar.",
+            "Los tokens básicos del lenguaje (ej. IF, +, ID).",
+            "El fin de archivo.",
+            "Los errores."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué operación realiza el 'Backpatching' (relleno hacia atrás)?",
+        "options": [
+            "Rellenar las direcciones de los saltos una vez que se conoce la dirección de destino.",
+            "Corregir errores léxicos anteriores.",
+            "Optimizar bucles.",
+            "Volver a analizar el código fuente."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuál es el coste computacional típico de un intérprete puro frente a código compilado optimizado?",
+        "options": [
+            "Son iguales.",
+            "El intérprete es 10-100 veces más lento (aprox).",
+            "El intérprete es más rápido.",
+            "Depende del tamaño del disco duro."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la notación postfija (polaca inversa), la expresión 'a + b' se escribe:",
+        "options": [
+            "+ a b",
+            "a b +",
+            "a + b",
+            "b a +"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué fase del compilador es responsable de asignar espacio de almacenamiento para las variables?",
+        "options": [
+            "Analizador Sintáctico.",
+            "Generación de Código / Asignación de Memoria.",
+            "Analizador Léxico.",
+            "Optimizador de bucles."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'Basic Block' (Bloque Básico)?",
+        "options": [
+            "Un conjunto de declaraciones.",
+            "Una secuencia lineal de instrucciones sin saltos internos salvo al final.",
+            "Una función.",
+            "Un archivo objeto."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la tabla de símbolos, ¿qué estructura es más eficiente para búsquedas rápidas?",
+        "options": [
+            "Lista enlazada no ordenada.",
+            "Tabla Hash.",
+            "Pila.",
+            "Cola."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "La instrucción 'LDA 0 5' en una P-Machine hipotética probablemente significa:",
+        "options": [
+            "Load Accumulator con 5.",
+            "Load Address: cargar la dirección de la variable en el nivel léxico 0, desplazamiento 5.",
+            "Limpiar datos.",
+            "Long Direct Access."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un autómata finito determinista (DFA)?",
+        "options": [
+            "Un modelo donde para cada estado y entrada hay exactamente una transición.",
+            "Un modelo donde puede haber múltiples transiciones para la misma entrada.",
+            "Un analizador sintáctico.",
+            "Una máquina de Turing."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Para qué sirve la función de 'error recovery' (recuperación de errores) en el parser?",
+        "options": [
+            "Para corregir el programa y guardarlo.",
+            "Para continuar el análisis y detectar más errores después del primero.",
+            "Para detener la compilación inmediatamente.",
+            "Para optimizar el código."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "La 'coerción' de tipos es:",
+        "options": [
+            "Un error de tipos.",
+            "Una conversión implícita de tipos realizada por el compilador.",
+            "Una conversión explícita (casting).",
+            "Una optimización de memoria."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es el 'Front-end' de un compilador?",
+        "options": [
+            "La parte que depende de la máquina destino.",
+            "La parte que analiza el fuente (Léxico, Sintáctico, Semántico) y genera código intermedio.",
+            "La interfaz gráfica del IDE.",
+            "El optimizador de código máquina."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es el 'Back-end' de un compilador?",
+        "options": [
+            "La parte que trata con el código fuente.",
+            "La parte que genera y optimiza el código máquina para la arquitectura específica.",
+            "El editor de texto.",
+            "El preprocesador."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un conflicto 'Shift-Reduce'?",
+        "options": [
+            "Cuando el parser no sabe si desplazar un token o reducir una regla.",
+            "Cuando hay dos reglas de reducción posibles.",
+            "Cuando la pila está llena.",
+            "Cuando hay un error léxico."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un conflicto 'Reduce-Reduce'?",
+        "options": [
+            "Cuando el parser puede aplicar dos producciones diferentes para reducir la entrada actual.",
+            "Cuando no sabe si hacer shift o reduce.",
+            "Cuando faltan puntos y comas.",
+            "Cuando la gramática es no contextual."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuál es la notación EBNF (Extended Backus-Naur Form)?",
+        "options": [
+            "Una versión simplificada que elimina la recursividad.",
+            "Una extensión de BNF que incluye metacaracteres como {}, [], () para repetición y opción.",
+            "Un lenguaje de programación.",
+            "Una forma de código máquina."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué significa que un analizador léxico use 'Input Buffering'?",
+        "options": [
+            "Que lee todo el archivo a la RAM de golpe.",
+            "Que usa bloques de memoria intermedia para leer del disco eficientemente.",
+            "Que no usa memoria.",
+            "Que comprime el código."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la generación de código, ¿qué es la 'selección de instrucciones'?",
+        "options": [
+            "Elegir qué instrucciones máquina implementan mejor el código intermedio.",
+            "Decidir qué variables van a registros.",
+            "Ordenar las instrucciones.",
+            "Eliminar código muerto."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En la optimización, ¿qué es la 'propagación de constantes'?",
+        "options": [
+            "Sustituir el uso de una variable por su valor constante conocido en tiempo de compilación.",
+            "Declarar todas las variables como const.",
+            "Mover constantes al inicio del programa.",
+            "Un tipo de error."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'eliminación de código muerto' (Dead Code Elimination)?",
+        "options": [
+            "Borrar comentarios.",
+            "Eliminar instrucciones cuyos resultados nunca se usan o que son inalcanzables.",
+            "Borrar funciones de librería no usadas.",
+            "Optimizar el linker."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué diferencia hay entre compilación estática y dinámica (JIT)?",
+        "options": [
+            "La estática ocurre antes de ejecutar; la dinámica durante la ejecución.",
+            "La dinámica es siempre mejor.",
+            "La estática no genera ejecutable.",
+            "No hay diferencia."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un 'Compilador de una pasada' (One-pass compiler)?",
+        "options": [
+            "Un compilador que lee el fuente una sola vez y genera el código objeto al vuelo.",
+            "Un compilador que falla una vez.",
+            "Un compilador que solo hace análisis léxico.",
+            "Un intérprete."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué limitación principal tienen los compiladores de una pasada?",
+        "options": [
+            "No pueden optimizar nada.",
+            "Requieren que las declaraciones aparezcan antes de su uso (o uso de forward).",
+            "Son muy lentos.",
+            "Generan código erróneo."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En una máquina de pila, la instrucción `LOD t, i` suele significar:",
+        "options": [
+            "Cargar en la cima de la pila el valor de la dirección base del bloque léxico `t` con desplazamiento `i`.",
+            "Cargar el valor inmediato `t`.",
+            "Cargar el registro `i`.",
+            "Saltar a la instrucción `t`."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué hace la instrucción `STO` (Store) en una máquina de pila?",
+        "options": [
+            "Toma el valor de la cima y lo guarda en la dirección indicada por la subcima (o argumentos).",
+            "Guarda el programa en disco.",
+            "Detiene la máquina.",
+            "Reserva memoria."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Bytecode'?",
+        "options": [
+            "Código binario nativo.",
+            "Un conjunto de instrucciones compacto diseñado para una máquina virtual eficiente.",
+            "Código ASCII.",
+            "Código fuente comprimido."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué papel juega el 'Linker' (Enlazador)?",
+        "options": [
+            "Compila el código.",
+            "Combina múltiples archivos objeto y librerías en un solo ejecutable, resolviendo direcciones.",
+            "Interpreta el código.",
+            "Depura el programa."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es el 'Loader' (Cargador)?",
+        "options": [
+            "Parte del SO que carga el ejecutable en memoria y prepara su ejecución.",
+            "El programa que descarga actualizaciones.",
+            "El primer paso del compilador.",
+            "El analizador sintáctico."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Asignación de Registros' (Register Allocation)?",
+        "options": [
+            "Decidir qué variables del programa residirán en los registros de la CPU para acceso rápido.",
+            "Asignar direcciones IP.",
+            "Crear el registro de activación.",
+            "Guardar el estado del programa."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué problema aborda el 'Spilling' en la asignación de registros?",
+        "options": [
+            "Cuando no hay suficientes registros, mover variables a memoria RAM.",
+            "El desbordamiento de buffer.",
+            "La fuga de memoria.",
+            "El error de división por cero."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En análisis léxico, ¿qué son las palabras reservadas?",
+        "options": [
+            "Identificadores que tienen un significado fijo en el lenguaje y no pueden usarse como nombres de variables.",
+            "Palabras secretas.",
+            "Comentarios.",
+            "Funciones del sistema."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un diagrama de transición de estados?",
+        "options": [
+            "Un gráfico que representa los estados y transiciones de un autómata para reconocer tokens.",
+            "Un diagrama de clases.",
+            "Un esquema de base de datos.",
+            "Un árbol sintáctico."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuál es la diferencia entre un NFA y un DFA?",
+        "options": [
+            "El NFA puede tener transiciones vacías (epsilon) y múltiples destinos para una entrada; el DFA es determinista.",
+            "El DFA es más lento.",
+            "El NFA no se puede implementar.",
+            "No hay diferencia teórica."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué algoritmo convierte un NFA a DFA?",
+        "options": [
+            "Construcción de subconjuntos.",
+            "Algoritmo de Dijkstra.",
+            "Algoritmo de Kruskal.",
+            "Eliminación de recursividad."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la notación 'dot' en un elemento LR (ej. A -> X . Y)?",
+        "options": [
+            "Indica hasta dónde se ha analizado la producción.",
+            "Es un punto final.",
+            "Es un operador de multiplicación.",
+            "Es un error."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la operación 'Closure' (Cierre) en el análisis LR?",
+        "options": [
+            "Expandir el conjunto de items añadiendo las producciones de los no-terminales que siguen al punto.",
+            "Cerrar el archivo.",
+            "Terminar el análisis.",
+            "Reducir la pila."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la operación 'GOTO' en la tabla de análisis LR?",
+        "options": [
+            "Define el cambio de estado tras reconocer un No-Terminal.",
+            "Un salto incondicional en el código.",
+            "Un error sintáctico.",
+            "Volver al inicio."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuál es el analizador LR más potente?",
+        "options": [
+            "LR Canónico (LR(1)).",
+            "LALR.",
+            "SLR.",
+            "LR(0)."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Por qué se prefiere LALR sobre LR(1) en herramientas como YACC?",
+        "options": [
+            "Porque tiene tablas mucho más pequeñas con casi la misma potencia.",
+            "Porque es más potente.",
+            "Porque detecta errores antes.",
+            "Porque usa menos CPU al compilar."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un 'Syntax Directed Definition' (Definición Dirigida por Sintaxis)?",
+        "options": [
+            "Una generalización de las gramáticas libres de contexto donde cada símbolo tiene atributos asociados.",
+            "Un manual de sintaxis.",
+            "Un compilador sin fases.",
+            "Un intérprete."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Code Hoisting'?",
+        "options": [
+            "Mover cálculos que se hacen en ambas ramas de un condicional hacia antes del condicional (si es seguro) para reducir tamaño.",
+            "Mover código al final.",
+            "Eliminar código.",
+            "Comentar código."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Reducción de potencia' (Strength Reduction)?",
+        "options": [
+            "Sustituir una operación costosa (ej. multiplicación) por otra más barata (ej. suma o desplazamiento).",
+            "Apagar la CPU.",
+            "Reducir el voltaje.",
+            "Usar menos variables."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Loop Unrolling' (Desenrollado de bucles)?",
+        "options": [
+            "Replicar el cuerpo del bucle varias veces para reducir la sobrecarga del control del bucle.",
+            "Eliminar el bucle.",
+            "Hacer el bucle infinito.",
+            "Invertir el bucle."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En una máquina de pila, ¿para qué sirve el registro 'Mark' o 'Base Pointer'?",
+        "options": [
+            "Para apuntar al inicio del marco de pila (stack frame) actual, permitiendo acceso a parám/locales.",
+            "Para marcar errores.",
+            "Para indicar el final de la memoria.",
+            "Para guardar el resultado."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué sucede en la fase de 'Decode' de un intérprete?",
+        "options": [
+            "Se analiza la instrucción apuntada por el PC para determinar qué operación realizar.",
+            "Se lee de memoria.",
+            "Se ejecuta la suma.",
+            "Se incrementa el PC."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué lenguaje intermedio utiliza la plataforma Java?",
+        "options": [
+            "Java Bytecode.",
+            "MSIL.",
+            "Assembly x86.",
+            "C++."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la máquina virtual CLR (Common Language Runtime)?",
+        "options": [
+            "El entorno de ejecución de .NET.",
+            "La máquina virtual de Java.",
+            "Un compilador de C.",
+            "Un sistema operativo."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En un diagrama de Tombstone, ¿qué significa un bloque con forma de 'S' (cuadrado aplastado)?",
+        "options": [
+            "Un programa escrito en un lenguaje L.",
+            "Una máquina M.",
+            "Un traductor.",
+            "Un intérprete."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En Tombstone, ¿qué forma tiene una máquina?",
+        "options": [
+            "Forma de casita (pentágono hacia abajo).",
+            "Forma de T.",
+            "Forma de S.",
+            "Forma redonda."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un compilador 'conversacional'?",
+        "options": [
+            "Uno que permite interacción línea a línea, similar a un intérprete (ej. BASIC antiguos o REPLs modernos).",
+            "Un compilador que habla.",
+            "Un chat bot.",
+            "Un traductor de idiomas naturales."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'coerción' (coercion) en el contexto del análisis semántico?",
+        "options": [
+            "Un error de tipos irrecuperable.",
+            "Una conversión implícita de tipos realizada automáticamente por el compilador.",
+            "Una conversión explícita solicitada por el programador (casting).",
+            "La eliminación de variables no usadas."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la gestión de memoria, ¿qué es el 'Display'?",
+        "options": [
+            "La pantalla de salida del compilador.",
+            "Un vector de punteros a los registros de activación activos, usado para acceder a variables no locales más rápido que con enlaces estáticos.",
+            "El área de memoria de vídeo.",
+            "Una técnica de depuración visual."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué problema resuelve el algoritmo de 'Marcar y Barrer' (Mark and Sweep)?",
+        "options": [
+            "La detección de bucles infinitos en el parser.",
+            "La recolección de basura (Garbage Collection) en el heap.",
+            "La optimización de registros.",
+            "La eliminación de recursividad por la izquierda."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En una gramática atribuida, ¿qué es una definición S-atribuida?",
+        "options": [
+            "Una gramática que usa solo atributos heredados.",
+            "Una gramática donde todos los atributos son sintetizados.",
+            "Una gramática que permite atributos sintetizados y heredados arbitrariamente.",
+            "Una gramática exclusiva para análisis semántico estático."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué ventaja tienen las definiciones L-atribuidas sobre las generales?",
+        "options": [
+            "Permiten evaluar los atributos en una sola pasada de izquierda a derecha (usualmente durante el análisis sintáctico).",
+            "Son más potentes que las S-atribuidas.",
+            "No requieren tabla de símbolos.",
+            "Generan código más rápido."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Dangling Else' (Else colgante)?",
+        "options": [
+            "Una optimización de bucles.",
+            "Una ambigüedad gramatical típica donde no se sabe a qué 'if' pertenece un 'else'.",
+            "Un error de puntero nulo.",
+            "Una variable no inicializada."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cómo se suele resolver la ambigüedad del 'Dangling Else' en gramáticas tipo YACC?",
+        "options": [
+            "Prohibiendo el uso de 'else'.",
+            "Asociando el 'else' al 'if' más cercano (regla de desplazamiento preferente sobre reducción).",
+            "Usando paréntesis obligatorios.",
+            "Creando un error de compilación."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En optimización, ¿qué es una 'variable de inducción'?",
+        "options": [
+            "Una variable que controla el número de iteraciones de un bucle y cambia linealmente.",
+            "Una variable global.",
+            "Una variable que induce errores.",
+            "Un parámetro por referencia."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "La transformación de 'T * 2' a 'T << 1' (desplazamiento de bits) es un ejemplo de:",
+        "options": [
+            "Reducción de potencia (Strength Reduction).",
+            "Propagación de copias.",
+            "Eliminación de código muerto.",
+            "Movimiento de código."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el grafo de flujo de control (Control Flow Graph - CFG)?",
+        "options": [
+            "Un diagrama de clases del compilador.",
+            "Una representación gráfica donde los nodos son bloques básicos y las aristas representan los saltos de control.",
+            "El árbol de sintaxis abstracta.",
+            "La pila de ejecución."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En un analizador LR, la acción 'Accept' significa:",
+        "options": [
+            "El analizador ha leído toda la entrada y ha reducido hasta el símbolo inicial exitosamente.",
+            "Se ha encontrado un token válido.",
+            "Se ha aceptado una conexión de red.",
+            "El usuario ha confirmado la compilación."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuál es la diferencia principal entre un compilador y un preprocesador?",
+        "options": [
+            "El preprocesador genera código máquina directamente.",
+            "El preprocesador realiza transformaciones textuales simples (macros, inclusiones) antes del análisis léxico real.",
+            "El compilador es más rápido.",
+            "No hay diferencia."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la Máquina de Pila Abstracta, la instrucción `MST` (Mark Stack) se utiliza para:",
+        "options": [
+            "Marcar el tope de la pila.",
+            "Preparar la pila para una llamada a procedimiento, reservando espacio para el enlace estático y dinámico.",
+            "Mostrar el estado de la pila en pantalla.",
+            "Multiplicar el valor del tope (Multiply Stack)."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué hace la instrucción `CUP` (Call User Procedure) en una P-Machine?",
+        "options": [
+            "Llama a una función del sistema operativo.",
+            "Transfiere el control a un procedimiento de usuario, actualizando el PC y los registros de activación.",
+            "Corta la ejecución (Cut Program).",
+            "Copia el tope de la pila."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En el análisis de vida de variables (Liveness Analysis), una variable está 'viva' en un punto si:",
+        "options": [
+            "Ha sido declarada.",
+            "Su valor actual puede ser usado en el futuro antes de ser reescrito.",
+            "Está en memoria y no en disco.",
+            "Es una variable global."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'forma estática de asignación única' (SSA)?",
+        "options": [
+            "Una representación intermedia donde cada variable es asignada exactamente una vez.",
+            "Un modo de asignar memoria estática.",
+            "Una restricción de lenguajes funcionales.",
+            "Un tipo de análisis léxico."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué herramienta se utiliza comúnmente para el 'Bootstrapping'?",
+        "options": [
+            "Un diagrama de Tombstone.",
+            "Un depurador.",
+            "Un editor hexadecimal.",
+            "Un cable de red."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Si un lenguaje soporta recursividad, ¿dónde deben almacenarse las variables locales?",
+        "options": [
+            "En una zona estática de memoria.",
+            "En la pila (Stack), dentro de cada registro de activación.",
+            "En los registros del procesador exclusivamente.",
+            "En el código del programa."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'token' centinela en una gramática?",
+        "options": [
+            "Un token especial (como $) que marca el final de la entrada para asegurar que el parser procese todo.",
+            "Un error léxico.",
+            "El primer token del archivo.",
+            "Un comentario."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "La optimización 'Inlining' (expansión en línea) consiste en:",
+        "options": [
+            "Escribir todo el código en una línea.",
+            "Sustituir una llamada a función por el cuerpo completo de la función llamada.",
+            "Alinear las instrucciones en memoria.",
+            "Eliminar líneas en blanco."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un lenguaje 'Tipado Fuertemente' (Strongly Typed)?",
+        "options": [
+            "Un lenguaje que obliga a cumplir estrictamente las restricciones de tipo, impidiendo operaciones incompatibles.",
+            "Un lenguaje que solo tiene tipos enteros.",
+            "Un lenguaje difícil de aprender.",
+            "Un lenguaje con muchas palabras reservadas."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En Lex/Flex, ¿qué hace la variable `yylval`?",
+        "options": [
+            "Cuenta el número de líneas.",
+            "Almacena el valor semántico del token actual para pasarlo al analizador sintáctico (Yacc/Bison).",
+            "Guarda el lexema como cadena.",
+            "Indica el estado del autómata."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué significa que una gramática sea 'recursiva por la derecha'?",
+        "options": [
+            "Que el no-terminal de la izquierda aparece al final de la producción (ej: A -> aA).",
+            "Que es errónea.",
+            "Que no se puede usar en análisis descendente.",
+            "Que genera bucles infinitos siempre."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuál es el principal inconveniente de la gestión de memoria manual (malloc/free)?",
+        "options": [
+            "Es demasiado lenta.",
+            "Es propensa a errores humanos como fugas de memoria (memory leaks) y punteros colgantes.",
+            "No permite recursividad.",
+            "Ocupa mucho espacio en disco."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la notación de cuádruplos, la sentencia `a = b[i]` requiere:",
+        "options": [
+            "Una sola instrucción.",
+            "Varias instrucciones para calcular la dirección (offset) y luego acceder a la memoria.",
+            "No se puede representar.",
+            "Una instrucción de salto."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'propagación de copias'?",
+        "options": [
+            "Dada una asignación x=y, reemplazar usos posteriores de x por y.",
+            "Copiar el código fuente.",
+            "Duplicar funciones.",
+            "Hacer copias de seguridad."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el análisis de alias?",
+        "options": [
+            "Determinar si dos o más punteros pueden referenciar a la misma dirección de memoria.",
+            "Buscar nombres de variables duplicados.",
+            "Comprobar alias de correo.",
+            "Optimizar nombres de archivos."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En una máquina de pila, la instrucción `ENT` (Enter) suele:",
+        "options": [
+            "Reservar espacio en la pila para las variables locales del nuevo bloque.",
+            "Entrar en modo debug.",
+            "Finalizar el programa.",
+            "Leer un entero del teclado."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Overlaying' o solapamiento en memoria?",
+        "options": [
+            "Técnica antigua para ejecutar programas más grandes que la RAM cargando partes bajo demanda en la misma zona.",
+            "Solapar ventanas.",
+            "Un error de segmentación.",
+            "Uso de memoria virtual."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué diferencia hay entre un compilador nativo y uno cruzado?",
+        "options": [
+            "El nativo genera código para la misma arquitectura donde corre; el cruzado para una distinta.",
+            "El nativo es más barato.",
+            "El cruzado no optimiza.",
+            "El nativo está escrito en ensamblador."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'recuperación en modo pánico' en un parser?",
+        "options": [
+            "El compilador se bloquea.",
+            "Al detectar error, descarta tokens de entrada hasta encontrar uno de sincronización (ej. ';') para intentar seguir.",
+            "Borra el archivo fuente.",
+            "Reinicia el ordenador."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'bloque de activación' (Activation Record) para una función 'inline'?",
+        "options": [
+            "Es igual que el de una normal.",
+            "No existe, ya que el código se inserta en el lugar de la llamada.",
+            "Es más pequeño.",
+            "Se guarda en el heap."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "La fragmentación externa es un problema típico de:",
+        "options": [
+            "La asignación estática.",
+            "La asignación en pila.",
+            "La gestión del Heap (montículo) con bloques de tamaño variable.",
+            "Los registros de la CPU."
+        ],
+        "correct": 2
+    },
+    {
+        "question": "En un diagrama de Tombstone, ¿qué representa 'T'?",
+        "options": [
+            "El traductor (compilador o intérprete).",
+            "La máquina.",
+            "El programa fuente.",
+            "El tiempo."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Para compilar un lenguaje orientado a objetos, ¿qué estructura adicional es crítica?",
+        "options": [
+            "Tabla de métodos virtuales (vtable).",
+            "Pila de deshacer.",
+            "Cola de impresión.",
+            "Buffer léxico."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Constant Folding' (Plegado de constantes)?",
+        "options": [
+            "Evaluar expresiones constantes en tiempo de compilación (ej. 3+5 -> 8).",
+            "Doblar el código.",
+            "Ocultar constantes.",
+            "Usar constantes globales."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En un análisis ascendente, el conjunto de ítems válidos para un prefijo viable se calcula usando la función:",
+        "options": [
+            "GOTO y CLOSURE.",
+            "FIRST y FOLLOW.",
+            "MALLOC y FREE.",
+            "PUSH y POP."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un lenguaje intermedio de 'Alto Nivel'?",
+        "options": [
+            "Un lenguaje cercano al código fuente original (ej. AST).",
+            "Ensamblador.",
+            "Código máquina.",
+            "Binario puro."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué significa que un token tenga 'lexema vacío'?",
+        "options": [
+            "Es un error.",
+            "Corresponde a la cadena vacía (epsilon), útil en ciertas reglas gramaticales.",
+            "Es un espacio en blanco.",
+            "Es un comentario."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es 'bison' en el contexto de compiladores?",
+        "options": [
+            "Un animal.",
+            "Una versión GNU compatible y mejorada de YACC.",
+            "Un analizador léxico.",
+            "Un optimizador."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'tabla de literales'?",
+        "options": [
+            "Parte de la tabla de símbolos que almacena constantes de cadena y números usados en el programa.",
+            "Una lista de errores.",
+            "El índice del libro.",
+            "La tabla de palabras reservadas."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "La instrucción `IXA` (Compute Address) en la P-Machine sirve para:",
+        "options": [
+            "Calcular la dirección efectiva de un elemento de un array (base + índice * tamaño).",
+            "Salir del programa.",
+            "Iniciar una variable.",
+            "Intercambiar topes de pila."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un 'Compilador Just-In-Time' (JIT)?",
+        "options": [
+            "Un híbrido que traduce bytecode a código máquina nativo durante la ejecución para mejorar rendimiento.",
+            "Un compilador que siempre llega tarde.",
+            "Un intérprete lento.",
+            "Un compilador estático."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuál es la función del 'cargador de enlace dinámico'?",
+        "options": [
+            "Cargar librerías (.dll, .so) en memoria en tiempo de ejecución solo cuando son necesarias.",
+            "Compilar el código.",
+            "Optimizar bucles.",
+            "Escribir en disco."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En una gramática, ¿qué es un símbolo 'No Terminal'?",
+        "options": [
+            "Una variable sintáctica que define un conjunto de cadenas de terminales.",
+            "Un carácter final.",
+            "Un error.",
+            "Un token."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Jerarquía de Chomsky'?",
+        "options": [
+            "Una clasificación de gramáticas formales (Tipo 0 a Tipo 3).",
+            "Una estructura de directorios.",
+            "Un algoritmo de ordenación.",
+            "Una arquitectura de CPU."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué tipo de gramática se necesita para el análisis sintáctico de la mayoría de lenguajes de programación?",
+        "options": [
+            "Tipo 2: Independiente del Contexto (Context-Free).",
+            "Tipo 3: Regular.",
+            "Tipo 0: Irrestricta.",
+            "Tipo 1: Sensible al contexto."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "Las expresiones regulares (Tipo 3) son suficientes para:",
+        "options": [
+            "El análisis léxico.",
+            "El análisis sintáctico completo.",
+            "El análisis semántico.",
+            "La optimización."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Ambigüedad inherente'?",
+        "options": [
+            "Cuando un lenguaje no puede ser generado por ninguna gramática no ambigua.",
+            "Cuando el programador se equivoca.",
+            "Cuando el compilador falla.",
+            "Cuando hay dos variables con el mismo nombre."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Code Motion' (Movimiento de código) fuera de bucles?",
+        "options": [
+            "Mover instrucciones invariantes (que dan siempre el mismo resultado) fuera del cuerpo del bucle para no repetirlas.",
+            "Mover el bucle a otra función.",
+            "Eliminar el bucle.",
+            "Cambiar el orden de iteración."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el paso de parámetros 'por valor-resultado' (Copy-Restore)?",
+        "options": [
+            "Se pasa la dirección de memoria y se modifica directamente.",
+            "Se copia el valor al entrar y, al finalizar la función, se copia el valor final de vuelta a la variable original.",
+            "Es idéntico al paso por referencia.",
+            "Es el método usado en Java para objetos."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En el contexto de ámbitos (scopes), ¿qué es el 'Alcance Estático' (Lexical Scoping)?",
+        "options": [
+            "La resolución de nombres depende del flujo de ejecución del programa.",
+            "La resolución de nombres depende de la estructura textual del código fuente (dónde se declara la variable).",
+            "Las variables son siempre globales.",
+            "El alcance se define en tiempo de ejecución."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué problema principal tiene el 'Alcance Dinámico'?",
+        "options": [
+            "Es muy difícil de implementar.",
+            "Hace que el código sea difícil de leer y depurar, ya que una función puede comportarse diferente según quién la llame.",
+            "Consume mucha memoria estática.",
+            "No permite recursividad."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'Thunk' en el contexto del paso de parámetros 'por nombre' (Call by Name)?",
+        "options": [
+            "Un error de compilación.",
+            "Una función sin nombre o procedimiento auxiliar que evalúa el argumento cada vez que es referenciado.",
+            "Un bloque de memoria liberado.",
+            "Una variable global especial."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la gestión de memoria Heap, ¿cuál es el problema de la 'Fragmentación Interna'?",
+        "options": [
+            "Hay huecos libres entre bloques ocupados que no se pueden usar.",
+            "Se asigna un bloque más grande del necesario, desperdiciando el espacio sobrante dentro del bloque asignado.",
+            "El heap se llena completamente.",
+            "Los punteros apuntan a direcciones incorrectas."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cuál es la principal desventaja del algoritmo de 'Contador de Referencias' (Reference Counting) para Garbage Collection?",
+        "options": [
+            "Es muy lento al asignar memoria.",
+            "No puede detectar ni liberar ciclos de referencias (ej. A apunta a B y B apunta a A).",
+            "Requiere detener todo el programa.",
+            "Usa mucha pila."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'Compactación' en el contexto del Garbage Collection?",
+        "options": [
+            "Comprimir los archivos fuente.",
+            "Mover los objetos vivos en el heap para que estén contiguos, eliminando la fragmentación externa.",
+            "Reducir el tamaño de las instrucciones.",
+            "Eliminar variables no usadas del código."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué registro de la Máquina de Pila apunta a la base del marco de activación actual (local variables)?",
+        "options": [
+            "SP (Stack Pointer).",
+            "PC (Program Counter).",
+            "BP (Base Pointer) o registro Mark.",
+            "NP (New Pointer)."
+        ],
+        "correct": 2
+    },
+    {
+        "question": "En una llamada a función, ¿quién es responsable de salvar los registros 'Caller-save'?",
+        "options": [
+            "La función llamada (callee).",
+            "La función que llama (caller), antes de transferir el control.",
+            "El sistema operativo.",
+            "El hardware automáticamente."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es el 'Spilling' en el algoritmo de coloreado de grafos para asignación de registros?",
+        "options": [
+            "Un error de desbordamiento de pila.",
+            "Cuando no hay suficientes colores (registros físicos) para los nodos (variables) y se debe guardar alguna variable en memoria RAM.",
+            "Pintar el grafo de rojo.",
+            "Optimizar el grafo eliminando nodos."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'Dominador' en un Grafo de Flujo de Control (CFG)?",
+        "options": [
+            "El nodo inicial.",
+            "Un nodo 'd' domina a 'n' si todo camino desde el inicio hasta 'n' pasa obligatoriamente por 'd'.",
+            "El nodo con más aristas.",
+            "Un bloque básico sin salida."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué optimización se basa en el análisis de 'Definiciones que llegan' (Reaching Definitions)?",
+        "options": [
+            "Propagación de constantes.",
+            "Eliminación de bucles.",
+            "Allocación de registros.",
+            "Parseo predictivo."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Código Trenzado' (Threaded Code) en la implementación de intérpretes?",
+        "options": [
+            "Uso de hilos del SO.",
+            "Técnica donde cada instrucción del bytecode contiene la dirección de la rutina que la ejecuta, saltando directamente de una a otra sin pasar por un bucle central.",
+            "Código espagueti.",
+            "Código en paralelo."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué diferencia hay entre un Análisis Sintáctico Predictivo y uno con Backtracking?",
+        "options": [
+            "El predictivo nunca retrocede; elige la regla correcta basándose en el token de preanálisis.",
+            "El predictivo es más lento.",
+            "El backtracking no permite recursividad.",
+            "No hay diferencia."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En una gramática LL(1), la intersección de los conjuntos FIRST de dos producciones distintas de un mismo no-terminal debe ser:",
+        "options": [
+            "Igual al conjunto FOLLOW.",
+            "No vacía.",
+            "Vacía (disjuntos) para evitar ambigüedad en la elección de la regla.",
+            "El conjunto universal."
+        ],
+        "correct": 2
+    },
+    {
+        "question": "¿Qué ocurre si un símbolo No-Terminal es 'anulable' (nullable)?",
+        "options": [
+            "Genera un error de sintaxis.",
+            "Puede derivar en la cadena vacía (epsilon).",
+            "No puede aparecer en la gramática.",
+            "Es un terminal disfrazado."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'Equivalencia Estructural' de tipos?",
+        "options": [
+            "Dos tipos son iguales si tienen el mismo nombre.",
+            "Dos tipos son iguales si tienen la misma estructura interna (campos, orden, tipos de subcomponentes), aunque se llamen distinto.",
+            "Dos tipos son iguales si se declaran en la misma línea.",
+            "Equivalencia de punteros."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'Equivalencia de Nombres' (Name Equivalence)?",
+        "options": [
+            "Dos variables tienen el mismo tipo solo si se definen con el mismo nombre de tipo explícito.",
+            "Si tienen la misma estructura.",
+            "Si tienen el mismo tamaño en bytes.",
+            "Si empiezan por la misma letra."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué instrucción P-Code se usa para cargar una constante en la pila?",
+        "options": [
+            "LOD",
+            "LDC (Load Constant)",
+            "LDA",
+            "STO"
+        ],
+        "correct": 1
+    },
+    {
+        "question": "En la Máquina de Pila, ¿qué hace la instrucción `IND` (Indirect Load)?",
+        "options": [
+            "Carga indirectamente una librería.",
+            "Reemplaza la dirección que hay en la cima de la pila por el valor contenido en esa dirección de memoria.",
+            "Indica un error.",
+            "Indexa un array."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'sobrecarga' (overloading) de funciones?",
+        "options": [
+            "Usar el mismo nombre para funciones distintas que se diferencian por el número o tipo de sus parámetros.",
+            "Llamar a una función demasiadas veces.",
+            "Un error de memoria.",
+            "Redefinir una función en una clase hija (overriding)."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el polimorfismo paramétrico?",
+        "options": [
+            "Sobrecarga de operadores.",
+            "Funciones o tipos de datos que pueden escribirse de forma genérica para manejar valores de diversos tipos (ej. templates en C++).",
+            "Herencia simple.",
+            "Casting dinámico."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Cuál es el objetivo del 'Análisis de Flujo de Datos' (Data Flow Analysis)?",
+        "options": [
+            "Analizar la sintaxis.",
+            "Recopilar información sobre cómo los valores se definen y usan a lo largo de las rutas de ejecución para optimizar.",
+            "Dibujar diagramas de flujo.",
+            "Detectar errores léxicos."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es una 'Variable Viva' (Live Variable) a la salida de un bloque?",
+        "options": [
+            "Una variable cuyo valor se usa en algún camino posterior antes de ser redefinida.",
+            "Una variable global.",
+            "Una variable que acaba de ser asignada.",
+            "Una variable constante."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Code Shape' en generación de código?",
+        "options": [
+            "La forma visual del código.",
+            "El patrón de instrucciones máquina que se elige para representar una construcción del lenguaje fuente (ej. cómo traducir un 'while').",
+            "El tamaño del ejecutable.",
+            "La indentación."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'Bucle Natural'?",
+        "options": [
+            "Un bucle for.",
+            "Un ciclo en el grafo de flujo que tiene una única entrada (cabecera) que domina a todos los nodos del bucle.",
+            "Un bucle infinito accidental.",
+            "Un bucle while(true)."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "La instrucción `RET` en una máquina de pila:",
+        "options": [
+            "Retorna de un procedimiento, restaurando el PC y eliminando el marco de activación actual.",
+            "Retorna un valor sin salir de la función.",
+            "Reinicia la máquina.",
+            "Reserva memoria temporal."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Tabla de Saltos' (Jump Table) en la generación de código para un 'switch'?",
+        "options": [
+            "Un array de direcciones de código donde se indexa con el valor del selector para saltar directamente al caso (case) correspondiente.",
+            "Una lista de errores.",
+            "Un grafo de dependencias.",
+            "Una optimización de bucles."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Evaluación en Cortocircuito' (Short-circuit evaluation) de expresiones booleanas?",
+        "options": [
+            "Evaluar todos los operandos siempre.",
+            "Detener la evaluación tan pronto como se conoce el resultado final (ej. en 'A AND B', si A es falso, no evaluar B).",
+            "Un fallo eléctrico en la CPU.",
+            "Evaluar de derecha a izquierda."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'Compilador Incremental'?",
+        "options": [
+            "Un compilador que recompila solo las partes modificadas del programa y sus dependencias.",
+            "Un compilador que aumenta el tamaño del código.",
+            "Un compilador lento.",
+            "Un intérprete."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "El término 'Copy-on-Write' se refiere a:",
+        "options": [
+            "Una optimización donde se comparte memoria y solo se realiza una copia real cuando alguien intenta escribir en ella.",
+            "Copiar siempre al escribir.",
+            "Escribir en disco.",
+            "Una técnica de parseo."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Uso-Definición' (Use-Def chain)?",
+        "options": [
+            "Una lista que conecta cada uso de una variable con todas las definiciones que podrían haberle dado valor.",
+            "Una cadena de caracteres.",
+            "Una definición de macro.",
+            "Un error de enlazado."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En gramáticas, ¿qué es la 'Precedencia de Operadores'?",
+        "options": [
+            "Reglas que determinan qué operador se evalúa primero en expresiones ambiguas (ej. * antes que +).",
+            "El orden de declaración de funciones.",
+            "La prioridad de los procesos.",
+            "Un error semántico."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Asociatividad' de un operador?",
+        "options": [
+            "Determina el orden de evaluación cuando aparecen operadores de igual precedencia seguidos (ej. a - b - c).",
+            "Con quién se asocia la variable.",
+            "Si es público o privado.",
+            "Si es unario o binario."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué significa que un lenguaje tenga 'Tipado Estático'?",
+        "options": [
+            "Que los tipos se comprueban en tiempo de ejecución.",
+            "Que los tipos de las variables se conocen y verifican en tiempo de compilación.",
+            "Que no tiene tipos.",
+            "Que las variables no pueden cambiar de valor."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué significa 'Duck Typing' (Tipado de Pato)?",
+        "options": [
+            "Un tipado estricto.",
+            "Un estilo dinámico donde la validez semántica se determina por el conjunto de métodos y propiedades que tiene el objeto, no por su herencia (si camina como pato...).",
+            "Un lenguaje para juegos.",
+            "Tipado nulo."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "La fase de 'Linearización' en generación de código implica:",
+        "options": [
+            "Poner el código en una línea.",
+            "Ordenar los bloques básicos en una secuencia lineal para generar el archivo objeto, minimizando los saltos incondicionales.",
+            "Eliminar funciones.",
+            "Usar álgebra lineal."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es un 'Perfilado' (Profiling) en optimización guiada?",
+        "options": [
+            "Ejecutar el programa con datos de prueba para recoger estadísticas de frecuencia de ejecución y optimizar las ramas más usadas.",
+            "Dibujar el perfil del usuario.",
+            "Formatear el código.",
+            "Comprobar tipos."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En la P-Machine, la instrucción `MOV` (Move) con tamaño `k`:",
+        "options": [
+            "Mueve el robot.",
+            "Transfiere `k` palabras de memoria desde la dirección origen a la destino (copia de bloques).",
+            "Mueve el registro PC.",
+            "Salta k instrucciones."
+        ],
+        "correct": 1
+    },
+    {
+        "question": "¿Qué es la 'Inferencia de Tipos'?",
+        "options": [
+            "La capacidad del compilador para deducir el tipo de una variable automáticamente sin declaración explícita (ej. `auto x = 5`).",
+            "Adivinar el código.",
+            "Un error de tipos.",
+            "Tipado dinámico puro."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un 'Closure' (Clausura) en programación funcional?",
+        "options": [
+            "Una función junto con su entorno léxico (variables capturadas) en el momento de su creación.",
+            "El fin de un archivo.",
+            "Una clase privada.",
+            "Un error de sintaxis."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Cuál es la función del 'Preprocesador de Macros'?",
+        "options": [
+            "Sustituir texto antes de la compilación real (ej. #define).",
+            "Optimizar código máquina.",
+            "Ejecutar el programa.",
+            "Depurar errores."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Expansión de Macros'?",
+        "options": [
+            "Reemplazar la llamada a la macro por su definición textual.",
+            "Agrandar la fuente.",
+            "Añadir memoria.",
+            "Crear nuevas macros."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un 'Punto de Secuencia' (Sequence Point)?",
+        "options": [
+            "Un punto en la ejecución donde todos los efectos secundarios de evaluaciones previas deben haberse completado.",
+            "Un punto y coma.",
+            "Un breakpoint.",
+            "Un error fatal."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "En análisis sintáctico, ¿qué es un error de 'Símbolo Inesperado' (Unexpected Token)?",
+        "options": [
+            "Cuando el token actual no encaja con ninguna regla gramatical posible en el estado actual.",
+            "Un error de disco.",
+            "Una variable no declarada.",
+            "Un comentario mal cerrado."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Indirección' en tablas de símbolos?",
+        "options": [
+            "Usar punteros para referirse a cadenas largas en lugar de guardar la cadena completa en la entrada de la tabla.",
+            "No saber dónde está el símbolo.",
+            "Buscar aleatoriamente.",
+            "Usar una tabla hash."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el 'Mangling' de nombres?",
+        "options": [
+            "La codificación del nombre de una función junto con sus tipos de parámetros para permitir sobrecarga en el enlazado (ej. en C++).",
+            "Destruir el código.",
+            "Borrar nombres.",
+            "Encriptación."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es un 'Stub'?",
+        "options": [
+            "Una implementación mínima o vacía de una función usada como marcador de posición.",
+            "Un puntero nulo.",
+            "Un tipo de dato.",
+            "Una librería dinámica."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es la 'Validación cruzada' en compiladores?",
+        "options": [
+            "Comprobar que el compilador funciona en diferentes plataformas.",
+            "Verificar tipos entre módulos distintos.",
+            "No existe.",
+            "Cruzar cables."
+        ],
+        "correct": 0
+    },
+    {
+        "question": "¿Qué es el formato 'ELF' (Executable and Linkable Format)?",
+        "options": [
+            "Un estándar común de archivos para ejecutables, código objeto y librerías compartidas en sistemas Unix/Linux.",
+            "Un personaje de fantasía.",
+            "Un lenguaje de script.",
+            "Un error de lectura."
+        ],
+        "correct": 0
+    }
+]

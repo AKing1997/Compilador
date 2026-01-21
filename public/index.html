@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Compiladores UOC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="setup-screen" class="setup-overlay" style="display:none;">
+        <div class="upload-card">
+            <div class="icon-box"><i class="ri-database-2-line"></i></div>
+            <h1>Base de Datos Vacía</h1>
+            <p>Sube el archivo <code>questions.json</code> para inicializar la base de datos.</p>
+            <label for="fileInput" class="custom-file-upload">
+                <i class="ri-upload-cloud-line"></i> Importar JSON
+            </label>
+            <input type="file" id="fileInput" accept=".json">
+        </div>
+    </div>
+
+    <div class="app-layout" id="app" style="display: none;">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <i class="ri-code-box-line"></i> <span>Compiladores</span>
+            </div>
+
+            <button class="btn-ghost" onclick="openAddModal()"
+                style="margin-top:10px; border-color:var(--primary); color:var(--primary); width:100%;">
+                <i class="ri-add-circle-line"></i> Crear Pregunta
+            </button>
+
+            <div class="stats-panel" style="margin-top: 20px;">
+                <div class="stat-item success">
+                    <span class="stat-num" id="stat-correct">0</span>
+                    <span class="stat-label">Aciertos</span>
+                </div>
+                <div class="stat-item error">
+                    <span class="stat-num" id="stat-wrong">0</span>
+                    <span class="stat-label">Fallos</span>
+                </div>
+                <div class="stat-item pending">
+                    <span class="stat-num" id="stat-pending">0</span>
+                    <span class="stat-label">Pendientes</span>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <small>MAPA DE PREGUNTAS</small>
+                <div class="question-grid" id="questionGrid">
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="btn-ghost" onclick="resetExam()"><i class="ri-refresh-line"></i> Reiniciar
+                    Progreso</button>
+                <button class="btn-warning" id="retryBtn" onclick="startRetryMode()" style="display:none;">
+                    <i class="ri-error-warning-line"></i> Repetir Fallos
+                </button>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <header class="top-bar">
+                <button class="menu-toggle" onclick="toggleSidebar()"><i class="ri-menu-line"></i></button>
+                <div class="progress-wrapper">
+                    <div class="progress-info">
+                        <span id="current-q-display">Pregunta 1</span>
+                        <span id="mode-badge" class="badge">Modo Examen</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="question-wrapper">
+                <div class="question-card" id="questionCard">
+                    <h2 class="q-text" id="questionText">Cargando...</h2>
+                    <div class="options-list" id="optionsContainer">
+                    </div>
+                    <div class="feedback-msg" id="feedbackMsg"></div>
+                </div>
+            </div>
+
+            <footer class="bottom-nav">
+                <button class="nav-btn" id="prevBtn" onclick="navigate(-1)"><i class="ri-arrow-left-line"></i>
+                    Anterior</button>
+                <button class="nav-btn primary" id="nextBtn" onclick="navigate(1)">Siguiente <i
+                        class="ri-arrow-right-line"></i></button>
+            </footer>
+        </main>
+    </div>
+
+    <div id="add-modal" class="setup-overlay" style="display:none; z-index: 2000;">
+        <div class="upload-card" style="text-align:left; max-width:600px; padding: 30px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h2 style="margin:0;">Nueva Pregunta</h2>
+                <button onclick="closeAddModal()"
+                    style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+            </div>
+
+            <label style="font-weight:bold; display:block; margin-bottom:5px;">Enunciado</label>
+            <textarea id="new-q-text"
+                style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:8px;"
+                rows="3"></textarea>
+
+            <label style="font-weight:bold; display:block; margin-bottom:5px;">Opciones</label>
+            <input type="text" class="opt-input" placeholder="Opción A"
+                style="width:100%; padding:10px; margin-bottom:8px; border:1px solid #ccc; border-radius:6px;">
+            <input type="text" class="opt-input" placeholder="Opción B"
+                style="width:100%; padding:10px; margin-bottom:8px; border:1px solid #ccc; border-radius:6px;">
+            <input type="text" class="opt-input" placeholder="Opción C"
+                style="width:100%; padding:10px; margin-bottom:8px; border:1px solid #ccc; border-radius:6px;">
+            <input type="text" class="opt-input" placeholder="Opción D"
+                style="width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:6px;">
+
+            <label style="font-weight:bold; display:block; margin-bottom:5px;">Respuesta Correcta</label>
+            <select id="new-q-correct"
+                style="width:100%; padding:10px; margin-bottom:25px; border:1px solid #ccc; border-radius:8px;">
+                <option value="0">Opción A</option>
+                <option value="1">Opción B</option>
+                <option value="2">Opción C</option>
+                <option value="3">Opción D</option>
+            </select>
+
+            <div style="display:flex; gap:10px; justify-content:flex-end;">
+                <button class="nav-btn" onclick="closeAddModal()">Cancelar</button>
+                <button class="nav-btn primary" onclick="submitNewQuestion()">Guardar en BD</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

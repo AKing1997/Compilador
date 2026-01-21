@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  # Tu aplicación Web + API
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/examendb
+    depends_on:
+      - mongo
+
+  # Base de Datos MongoDB
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db # Persistencia de datos
+
+volumes:
+  mongo-data:
